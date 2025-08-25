@@ -1,0 +1,136 @@
+You are tasked with creating a modern, minimal, and emotionally engaging landing page for an NGO named “Sahil Patel Foundations”. The NGO’s mission is to help poor and underprivileged children celebrate their birthdays, provide them with food, offer financial assistance, and accept all kinds of donations (clothes, books, toys, money, etc.).
+
+You will be editing an existing Next.js boilerplate project. Your job is to design and build the complete landing page from scratch with a professional, modern, yet human touch.
+
+General Guidelines
+
+Keep the design super clean, minimal, and modern.
+
+Focus on emotional storytelling with visuals and layout that connect to visitors’ empathy.
+
+Use soft, warm, and trust-building colors (like white, light gray, pastel shades, and a highlight color such as orange, teal, or blue).
+
+Typography should be modern, easy to read, and elegant. Preferably use sans-serif fonts like Inter, Poppins, or Nunito.
+
+Layout should be responsive and mobile-first.
+
+Use subtle animations and micro-interactions (fade-ins, smooth transitions, hover effects).
+
+Maintain a professional NGO vibe, not corporate, but not overly flashy either.
+
+Sections to Include
+
+Hero Section (Above the Fold)
+
+Full-width clean hero with background image/video (children smiling / birthday celebration).
+
+Overlay with a soft gradient for readability.
+
+Headline: “Every Child Deserves a Smile on Their Special Day”.
+
+Subtext: “Sahil Patel Foundations helps underprivileged children celebrate birthdays, enjoy meals, and receive love through donations.”
+
+Prominent Call-to-Action (CTA) buttons:
+
+“Donate Now” (highlighted button)
+
+“Learn More” (secondary button)
+
+About Us Section
+
+Title: “Who We Are”
+
+A short story about the foundation’s mission and values.
+
+Use an image of volunteers or kids celebrating.
+
+Include a small timeline or milestones to build credibility (e.g., number of children helped, meals served, birthdays celebrated).
+
+Our Mission / What We Do
+
+3–4 cards/icons representing:
+
+Birthday Celebrations 🎂
+
+Food Distribution 🍲
+
+Educational Support 📚
+
+Monetary & Material Donations 💝
+
+Each card should have an icon, short title, and 2-line description.
+
+How You Can Help (Donation Section)
+
+Title: “Make a Difference”
+
+Explain how people can contribute:
+
+Donate money
+
+Sponsor a child’s birthday
+
+Donate clothes, toys, books
+
+Include a donation CTA button that stands out.
+
+Impact / Statistics Section
+
+Highlight impact numbers:
+
+“500+ Children Celebrated Birthdays”
+
+“10,000+ Meals Distributed”
+
+“200+ Families Supported”
+
+Use animated counters or infographics.
+
+Testimonials / Stories
+
+Showcase real stories or short quotes from beneficiaries/volunteers.
+
+Use a carousel or grid layout with photos.
+
+Call-to-Action Banner
+
+A full-width banner with a motivational message like:
+“Together, we can bring smiles to children’s lives. Be a part of their happiness today.”
+
+Large CTA: “Donate Now”
+
+Contact & Newsletter Section
+
+Simple contact form (Name, Email, Message).
+
+Newsletter subscription box: “Stay connected with our work.”
+
+Social media icons (minimal style).
+
+Footer
+
+NGO logo/name, quick links, copyright.
+
+Small disclaimer about donations.
+
+Technical Details
+
+Use Next.js + Tailwind CSS for styling.
+
+Components should be modular and reusable.
+
+Stick to a grid-based layout with adequate spacing.
+
+Optimize for performance and accessibility (aria-labels, alt text for images).
+
+Add SEO meta tags for keywords like: NGO, donations, child welfare, charity, birthday celebrations for poor kids.
+
+Include favicon and social share preview image.
+
+Bonus Enhancements
+
+Add a subtle animated background element (like soft shapes or particles) to give a modern touch.
+
+Smooth scroll for navigation links.
+
+Light/dark mode toggle (optional).

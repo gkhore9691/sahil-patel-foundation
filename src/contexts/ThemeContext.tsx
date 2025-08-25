@@ -16,11 +16,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Only run on client side after mount
   useEffect(() => {
     setMounted(true);
-    
+
     // Check if user has a theme preference stored
     const storedTheme = localStorage.getItem('theme') as Theme | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+
     if (storedTheme) {
       setTheme(storedTheme);
     } else if (prefersDark) {
@@ -30,7 +32,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!mounted) return;
-    
+
     // Apply theme to document
     const root = document.documentElement;
     if (theme === 'dark') {
@@ -38,13 +40,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove('dark');
     }
-    
+
     // Store theme preference
     localStorage.setItem('theme', theme);
   }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
   // Prevent hydration mismatch by not rendering until mounted

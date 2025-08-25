@@ -441,8 +441,8 @@ const Home = () => {
                 </div>
               </div>
               <p className="italic text-gray-600 dark:text-gray-300">
-                "It was the first time I had a cake just for me. I felt so
-                happy!"
+                &quot;It was the first time I had a cake just for me. I felt so
+                happy!&quot;
               </p>
             </div>
 

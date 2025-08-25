@@ -1,11 +1,93 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { ThemeToggle } from '../components/ThemeToggle';
 import { AppConfig } from '../utils/AppConfig';
 
+// Custom hook for counting animation
+const useCountUp = (end: number, duration: number = 2000, delay: number = 0) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const timer = setTimeout(() => {
+      const startTime = Date.now();
+      const startValue = 0;
+
+      const updateCount = () => {
+        const currentTime = Date.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const currentCount = Math.floor(startValue + (end - startValue) * easeOutQuart);
+        
+        setCount(currentCount);
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    }, delay);
+
+    return () => clearTimeout(timer);
+  }, [isVisible, end, duration, delay]);
+
+  return { count, ref };
+};
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Counting animations for About Us milestones
+  const { count: birthdayCount, ref: birthdayRef } = useCountUp(500, 2000, 0);
+  const { count: mealsCount, ref: mealsRef } = useCountUp(10000, 2000, 200);
+  const { count: familiesCount, ref: familiesRef } = useCountUp(200, 2000, 400);
+  
+  // Counting animations for Impact Statistics
+  const { count: impactBirthdayCount, ref: impactBirthdayRef } = useCountUp(500, 2000, 0);
+  const { count: impactMealsCount, ref: impactMealsRef } = useCountUp(10000, 2000, 200);
+  const { count: impactFamiliesCount, ref: impactFamiliesRef } = useCountUp(200, 2000, 400);
+  const { count: impactEventsCount, ref: impactEventsRef } = useCountUp(50, 2000, 600);
+  
+  // Counting animations for Donor Review section
+  const { count: donorCount, ref: donorRef } = useCountUp(250, 2000, 0);
+  
+  // Counting animations for Detailed Impact Statistics
+  const { count: detailedBirthdayCount, ref: detailedBirthdayRef } = useCountUp(523, 2000, 0);
+  const { count: detailedMealsCount, ref: detailedMealsRef } = useCountUp(12840, 2000, 200);
+  const { count: detailedFamiliesCount, ref: detailedFamiliesRef } = useCountUp(267, 2000, 400);
+  
+  // Counting animations for Financial Statistics
+  const { count: totalDonationsCount, ref: totalDonationsRef } = useCountUp(820000, 2000, 0);
+  const { count: birthdayFundsCount, ref: birthdayFundsRef } = useCountUp(369000, 2000, 200);
+  const { count: foodFundsCount, ref: foodFundsRef } = useCountUp(287000, 2000, 400);
+  const { count: educationFundsCount, ref: educationFundsRef } = useCountUp(123000, 2000, 600);
+  const { count: adminFundsCount, ref: adminFundsRef } = useCountUp(41000, 2000, 800);
 
   useEffect(() => {
     setIsVisible(true);
@@ -53,28 +135,63 @@ const Home = () => {
           ></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div
-            className={`transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'translate-y-8 opacity-0'}`}
-          >
-            <h1 className="mb-6 md:mb-8 font-display text-3xl md:text-5xl font-bold leading-tight lg:text-7xl">
-              Every Child Deserves a{' '}
-              <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Smile</span> on Their Special Day
-            </h1>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+          <div className="grid items-center gap-12 lg:gap-16 lg:grid-cols-2">
+            {/* Archer Image - First on both mobile and desktop */}
+            <div className="flex justify-center lg:justify-start order-1">
+              <div
+                className={`relative transition-all duration-1000 delay-300 ${
+                  isVisible 
+                    ? 'opacity-100 transform translate-y-0 scale-100' 
+                    : 'opacity-0 translate-y-12 scale-95'
+                }`}
+              >
+                <div className="relative">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-400/20 to-secondary-400/20 rounded-full blur-3xl scale-110"></div>
+                  
+                  {/* Main image container */}
+                  <div className="relative bg-gradient-to-br from-primary-100/50 to-secondary-100/50 dark:from-primary-900/30 dark:to-secondary-900/30 rounded-full p-4 md:p-6 lg:p-8 shadow-2xl">
+                    <img
+                      src="/IMG_1982-removebg-preview.png"
+                      alt="Divine Archer - Symbol of Strength and Purpose"
+                      className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] object-contain drop-shadow-2xl"
+                    />
+                  </div>
+                  
+                  {/* Floating elements */}
+                  <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-8 h-8 sm:w-10 sm:h-10 bg-accent-400 rounded-full animate-pulse opacity-80"></div>
+                  <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-6 h-6 sm:w-8 sm:h-8 bg-primary-400 rounded-full animate-pulse opacity-60" style={{ animationDelay: '1s' }}></div>
+                  <div className="absolute top-1/2 -right-6 sm:-right-10 w-4 h-4 sm:w-6 sm:h-6 bg-secondary-400 rounded-full animate-pulse opacity-70" style={{ animationDelay: '2s' }}></div>
+                </div>
+              </div>
+            </div>
 
-            <p className="mx-auto mb-8 md:mb-18 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-300 lg:text-2xl px-4 md:px-0">
-              Sahil Patel Foundations is dedicated to bringing joy to
-              underprivileged children through birthday celebrations, nutritious
-              meals, and donations that make a real difference.
-            </p>
+            {/* Text Content - Second on both mobile and desktop */}
+            <div className="text-center lg:text-left order-2">
+              <div
+                className={`transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'translate-y-8 opacity-0'}`}
+              >
+                <h1 className="mb-6 md:mb-8 font-display text-3xl md:text-5xl font-bold leading-tight lg:text-7xl">
+                  Every Child Deserves a{' '}
+                  <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Smile</span> on Their Special Day
+                </h1>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row px-4 md:px-0">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 text-base md:text-lg">
-                Donate Now ❤️
-              </button>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border-2 border-primary-500 dark:border-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 text-base md:text-lg">
-                Learn More
-              </button>
+                <p className="mx-auto lg:mx-0 mb-8 md:mb-12 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-300 lg:text-2xl">
+                  Sahil Patel Foundations is dedicated to bringing joy to
+                  underprivileged children through birthday celebrations, nutritious
+                  meals, and donations that make a real difference.
+                </p>
+
+                <div className="flex flex-col items-center lg:items-start gap-4 sm:flex-row">
+                  <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 text-base md:text-lg">
+                    Donate Now ❤️
+                  </button>
+                  <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border-2 border-primary-500 dark:border-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 text-base md:text-lg">
+                    Learn More
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -110,23 +227,23 @@ const Home = () => {
 
               {/* Milestones */}
               <div className="grid grid-cols-3 gap-4 md:gap-6">
-                <div className="text-center">
+                <div className="text-center" ref={birthdayRef}>
                   <div className="text-2xl md:text-3xl font-bold text-primary-500">
-                    500+
+                    {birthdayCount.toLocaleString()}+
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
                     Birthday Celebrations
                   </div>
                 </div>
-                <div className="text-center">
+                <div className="text-center" ref={mealsRef}>
                   <div className="text-2xl md:text-3xl font-bold text-primary-500">
-                    10K+
+                    {mealsCount.toLocaleString()}+
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Meals Distributed</div>
                 </div>
-                <div className="text-center">
+                <div className="text-center" ref={familiesRef}>
                   <div className="text-2xl md:text-3xl font-bold text-primary-500">
-                    200+
+                    {familiesCount.toLocaleString()}+
                   </div>
                   <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
                     Families Supported
@@ -375,9 +492,9 @@ const Home = () => {
           </div>
 
           <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="text-center">
+            <div className="text-center" ref={impactBirthdayRef}>
               <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
-                500+
+                {impactBirthdayCount.toLocaleString()}+
               </div>
               <div className="text-base md:text-xl opacity-90">
                 Children Celebrated Birthdays
@@ -385,28 +502,28 @@ const Home = () => {
             </div>
             <div
               className="text-center"
-              style={{ animationDelay: '0.1s' }}
+              ref={impactMealsRef}
             >
               <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
-                10,000+
+                {impactMealsCount.toLocaleString()}+
               </div>
               <div className="text-base md:text-xl opacity-90">Meals Distributed</div>
             </div>
             <div
               className="text-center"
-              style={{ animationDelay: '0.2s' }}
+              ref={impactFamiliesRef}
             >
               <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
-                200+
+                {impactFamiliesCount.toLocaleString()}+
               </div>
               <div className="text-base md:text-xl opacity-90">Families Supported</div>
             </div>
             <div
               className="text-center"
-              style={{ animationDelay: '0.3s' }}
+              ref={impactEventsRef}
             >
               <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
-                50+
+                {impactEventsCount.toLocaleString()}+
               </div>
               <div className="text-base md:text-xl opacity-90">Community Events</div>
             </div>
@@ -680,9 +797,9 @@ const Home = () => {
                   <span>⭐⭐⭐⭐⭐</span>
                 </div>
               </div>
-              <div>
+              <div ref={donorRef}>
                 <div className="mb-2 text-3xl font-bold text-primary-500">
-                  250+
+                  {donorCount.toLocaleString()}+
                 </div>
                 <div className="text-gray-600 dark:text-gray-300">Happy Donors</div>
               </div>
@@ -718,12 +835,12 @@ const Home = () => {
 
           {/* Main Statistics Grid */}
           <div className="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg">
+            <div className="rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg" ref={detailedBirthdayRef}>
               <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-primary-100">
                 <span className="text-2xl">🎂</span>
               </div>
               <div className="mb-2 text-4xl font-bold text-primary-500">
-                523
+                {detailedBirthdayCount.toLocaleString()}
               </div>
               <div className="mb-2 font-medium text-gray-600 dark:text-gray-300">
                 Birthday Celebrations
@@ -734,14 +851,14 @@ const Home = () => {
             </div>
 
             <div
-              className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg"
-              style={{ animationDelay: '0.1s' }}
+              className="rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg"
+              ref={detailedMealsRef}
             >
               <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-primary-100">
                 <span className="text-2xl">🍽️</span>
               </div>
               <div className="mb-2 text-4xl font-bold text-primary-500">
-                12,840
+                {detailedMealsCount.toLocaleString()}
               </div>
               <div className="mb-2 font-medium text-gray-600 dark:text-gray-300">
                 Meals Provided
@@ -752,14 +869,14 @@ const Home = () => {
             </div>
 
             <div
-              className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg"
-              style={{ animationDelay: '0.2s' }}
+              className="rounded-xl bg-white dark:bg-gray-800 p-8 text-center shadow-lg"
+              ref={detailedFamiliesRef}
             >
               <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-primary-100">
                 <span className="text-2xl">👨‍👩‍👧‍👦</span>
               </div>
               <div className="mb-2 text-4xl font-bold text-primary-500">
-                267
+                {detailedFamiliesCount.toLocaleString()}
               </div>
               <div className="mb-2 font-medium text-gray-600 dark:text-gray-300">
                 Families Supported
@@ -774,8 +891,8 @@ const Home = () => {
               <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-primary-100">
                 <span className="text-2xl">💰</span>
               </div>
-              <div className="mb-2 text-4xl font-bold text-primary-500">
-                ₹8.2L
+              <div className="mb-2 text-4xl font-bold text-primary-500" ref={totalDonationsRef}>
+                ₹{(totalDonationsCount / 100000).toFixed(1)}L
               </div>
               <div className="mb-2 font-medium text-gray-600 dark:text-gray-300">
                 Total Donations
@@ -803,8 +920,8 @@ const Home = () => {
                       style={{ width: '45%' }}
                     ></div>
                   </div>
-                  <div className="mt-1 text-sm text-gray-500">
-                    ₹3.69L - Cakes, gifts, decorations
+                  <div className="mt-1 text-sm text-gray-500" ref={birthdayFundsRef}>
+                    ₹{(birthdayFundsCount / 100000).toFixed(2)}L - Cakes, gifts, decorations
                   </div>
                 </div>
 
@@ -819,8 +936,8 @@ const Home = () => {
                       style={{ width: '35%' }}
                     ></div>
                   </div>
-                  <div className="mt-1 text-sm text-gray-500">
-                    ₹2.87L - Nutritious meals, groceries
+                  <div className="mt-1 text-sm text-gray-500" ref={foodFundsRef}>
+                    ₹{(foodFundsCount / 100000).toFixed(2)}L - Nutritious meals, groceries
                   </div>
                 </div>
 
@@ -835,8 +952,8 @@ const Home = () => {
                       style={{ width: '15%' }}
                     ></div>
                   </div>
-                  <div className="mt-1 text-sm text-gray-500">
-                    ₹1.23L - Books, stationery, uniforms
+                  <div className="mt-1 text-sm text-gray-500" ref={educationFundsRef}>
+                    ₹{(educationFundsCount / 100000).toFixed(2)}L - Books, stationery, uniforms
                   </div>
                 </div>
 
@@ -851,8 +968,8 @@ const Home = () => {
                       style={{ width: '5%' }}
                     ></div>
                   </div>
-                  <div className="mt-1 text-sm text-gray-500">
-                    ₹41K - Operations, transport
+                  <div className="mt-1 text-sm text-gray-500" ref={adminFundsRef}>
+                    ₹{(adminFundsCount / 1000).toFixed(0)}K - Operations, transport
                   </div>
                 </div>
               </div>

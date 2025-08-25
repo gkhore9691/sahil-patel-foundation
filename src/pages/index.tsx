@@ -57,22 +57,22 @@ const Home = () => {
           <div
             className={`transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'translate-y-8 opacity-0'}`}
           >
-            <h1 className="mb-8 font-display text-5xl font-bold leading-tight lg:text-7xl">
+            <h1 className="mb-6 md:mb-8 font-display text-3xl md:text-5xl font-bold leading-tight lg:text-7xl">
               Every Child Deserves a{' '}
               <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Smile</span> on Their Special Day
-        </h1>
+            </h1>
 
-            <p className="mx-auto mb-18 max-w-3xl text-xl leading-relaxed text-gray-600 dark:text-gray-300 dark:text-gray-300 lg:text-2xl">
+            <p className="mx-auto mb-8 md:mb-18 max-w-3xl text-lg md:text-xl leading-relaxed text-gray-600 dark:text-gray-300 lg:text-2xl px-4 md:px-0">
               Sahil Patel Foundations is dedicated to bringing joy to
               underprivileged children through birthday celebrations, nutritious
               meals, and donations that make a real difference.
             </p>
 
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg transform hover:-translate-y-0.5 px-8 py-4 text-lg">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row px-4 md:px-0">
+              <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 text-base md:text-lg">
                 Donate Now ❤️
               </button>
-              <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border-2 border-primary-500 dark:border-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 px-8 py-4 text-lg">
+              <button className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 rounded-lg font-medium transition-all duration-200 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 border-2 border-primary-500 dark:border-primary-400 hover:bg-primary-50 dark:hover:bg-gray-700 text-base md:text-lg">
                 Learn More
               </button>
             </div>
@@ -88,20 +88,20 @@ const Home = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <section className="py-12 md:py-16 lg:py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out">
-              <h2 className="mb-6 font-display text-4xl font-bold lg:text-5xl">
+          <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2">
+            <div className="order-2 lg:order-1">
+              <h2 className="mb-4 md:mb-6 font-display text-3xl md:text-4xl font-bold lg:text-5xl">
                 Who We Are
               </h2>
-              <p className="mb-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300 dark:text-gray-300">
+              <p className="mb-4 md:mb-6 text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 At Sahil Patel Foundations, we believe every child deserves to
                 feel special — no matter their circumstances. Our mission is
                 simple: to bring smiles to children's faces through love, care,
                 and celebrations.
               </p>
-              <p className="mb-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300 dark:text-gray-300">
+              <p className="mb-6 md:mb-8 text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                 From birthdays filled with joy to meals served with dignity,
                 we've helped hundreds of children and families across Mumbai.
                 Together, we can create moments of happiness that last a
@@ -109,46 +109,46 @@ const Home = () => {
               </p>
 
               {/* Milestones */}
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-4 md:gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-500">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-500">
                     500+
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
                     Birthday Celebrations
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-500">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-500">
                     10K+
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">Meals Distributed</div>
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Meals Distributed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-500">
+                  <div className="text-2xl md:text-3xl font-bold text-primary-500">
                     200+
                   </div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
                     Families Supported
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out">
+            <div className="order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="relative">
-                <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-2xl shadow-2xl">
-                  <div className="flex h-96 w-full items-center justify-center bg-gradient-to-br from-primary-100 to-secondary-100">
-                    <div className="p-8 text-center">
-                      <span className="mb-4 block text-6xl">👶🎈</span>
-                      <p className="text-gray-600 dark:text-gray-300">
+                <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl">
+                  <div className="flex h-64 md:h-96 w-full items-center justify-center bg-gradient-to-br from-primary-100 to-secondary-100">
+                    <div className="p-4 md:p-8 text-center">
+                      <span className="mb-2 md:mb-4 block text-4xl md:text-6xl">👶🎈</span>
+                      <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                         Beautiful moments of children celebrating together
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="absolute -bottom-6 -right-6 flex size-24 items-center justify-center rounded-full bg-primary-500 shadow-lg">
-                  <span className="text-3xl">💝</span>
+                <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 flex size-16 md:size-24 items-center justify-center rounded-full bg-primary-500 shadow-lg">
+                  <span className="text-xl md:text-3xl">💝</span>
                 </div>
               </div>
             </div>
@@ -157,77 +157,77 @@ const Home = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
+      <section className="py-12 md:py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-display text-4xl font-bold lg:text-5xl">
+          <div className="mb-12 md:mb-16 text-center">
+            <h2 className="mb-4 md:mb-6 font-display text-3xl md:text-4xl font-bold lg:text-5xl">
               What We Do
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+            <p className="mx-auto max-w-3xl text-lg md:text-xl text-gray-600 dark:text-gray-300 px-4 md:px-0">
               Our comprehensive approach to child welfare focuses on bringing
               joy, nourishment, education, and support to those who need it
               most.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Birthday Celebrations */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 opacity-100 transform translate-y-0 transition-all duration-300 ease-out p-8 text-center">
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-primary-100">
-                <span className="text-3xl">🎂</span>
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 md:p-8 text-center">
+              <div className="mx-auto mb-4 md:mb-6 flex size-12 md:size-16 items-center justify-center rounded-full bg-primary-100">
+                <span className="text-2xl md:text-3xl">🎂</span>
               </div>
-              <h3 className="mb-4 font-display text-xl font-semibold">
+              <h3 className="mb-3 md:mb-4 font-display text-lg md:text-xl font-semibold">
                 Birthday Celebrations
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Cakes, gifts, and laughter-filled parties for children.
               </p>
             </div>
 
             {/* Food Distribution */}
             <div
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 opacity-100 transform translate-y-0 transition-all duration-300 ease-out p-8 text-center"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 md:p-8 text-center"
               style={{ animationDelay: '0.1s' }}
             >
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-primary-100">
-                <span className="text-3xl">🍲</span>
+              <div className="mx-auto mb-4 md:mb-6 flex size-12 md:size-16 items-center justify-center rounded-full bg-primary-100">
+                <span className="text-2xl md:text-3xl">🍲</span>
               </div>
-              <h3 className="mb-4 font-display text-xl font-semibold">
+              <h3 className="mb-3 md:mb-4 font-display text-lg md:text-xl font-semibold">
                 Food Distribution
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Nutritious meals for children and families in need.
               </p>
             </div>
 
             {/* Educational Support */}
             <div
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 opacity-100 transform translate-y-0 transition-all duration-300 ease-out p-8 text-center"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 md:p-8 text-center"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-primary-100">
-                <span className="text-3xl">📚</span>
+              <div className="mx-auto mb-4 md:mb-6 flex size-12 md:size-16 items-center justify-center rounded-full bg-primary-100">
+                <span className="text-2xl md:text-3xl">📚</span>
               </div>
-              <h3 className="mb-4 font-display text-xl font-semibold">
+              <h3 className="mb-3 md:mb-4 font-display text-lg md:text-xl font-semibold">
                 Educational Support
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Books, stationery, and learning kits to inspire growth.
               </p>
             </div>
 
             {/* Donations & Aid */}
             <div
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 opacity-100 transform translate-y-0 transition-all duration-300 ease-out p-8 text-center"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 md:p-8 text-center"
               style={{ animationDelay: '0.3s' }}
             >
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-primary-100">
-                <span className="text-3xl">💝</span>
+              <div className="mx-auto mb-4 md:mb-6 flex size-12 md:size-16 items-center justify-center rounded-full bg-primary-100">
+                <span className="text-2xl md:text-3xl">💝</span>
               </div>
-              <h3 className="mb-4 font-display text-xl font-semibold">
+              <h3 className="mb-3 md:mb-4 font-display text-lg md:text-xl font-semibold">
                 Material Donations
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Clothes, toys, and daily essentials for better living.
               </p>
             </div>
@@ -238,12 +238,12 @@ const Home = () => {
       {/* How You Can Help Section */}
       <section className="py-16 lg:py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-display text-4xl font-bold lg:text-5xl">
+          <div className="mb-12 md:mb-16 text-center">
+            <h2 className="mb-4 md:mb-6 font-display text-3xl md:text-4xl font-bold lg:text-5xl">
               Make a Difference
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
-              Your support helps us provide essential care, education, and hope to children in need. Choose how you'd like to contribute to their brighter future.
+            <p className="mx-auto max-w-3xl text-lg md:text-xl text-gray-600 dark:text-gray-300 px-4 md:px-0">
+              Your support helps us provide essential care, education, and hope to children in need. Choose how you&apos;d like to contribute to their brighter future.
             </p>
           </div>
 
@@ -362,53 +362,53 @@ const Home = () => {
       </section>
 
       {/* Impact Statistics */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
+      <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-display text-4xl font-bold lg:text-5xl">
+          <div className="mb-12 md:mb-16 text-center">
+            <h2 className="mb-4 md:mb-6 font-display text-3xl md:text-4xl font-bold lg:text-5xl">
               Our Impact in Numbers
             </h2>
-            <p className="mx-auto max-w-3xl text-xl opacity-90">
+            <p className="mx-auto max-w-3xl text-lg md:text-xl opacity-90 px-4 md:px-0">
               Every number represents a life touched, a smile created, and hope
               restored.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out text-center">
-              <div className="mb-2 opacity-100 transform scale-100 transition-all duration-300 ease-out text-5xl font-bold lg:text-6xl">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-center">
+              <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
                 500+
               </div>
-              <div className="text-xl opacity-90">
+              <div className="text-base md:text-xl opacity-90">
                 Children Celebrated Birthdays
               </div>
             </div>
             <div
-              className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out text-center"
+              className="text-center"
               style={{ animationDelay: '0.1s' }}
             >
-              <div className="mb-2 opacity-100 transform scale-100 transition-all duration-300 ease-out text-5xl font-bold lg:text-6xl">
+              <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
                 10,000+
               </div>
-              <div className="text-xl opacity-90">Meals Distributed</div>
+              <div className="text-base md:text-xl opacity-90">Meals Distributed</div>
             </div>
             <div
-              className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out text-center"
+              className="text-center"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="mb-2 opacity-100 transform scale-100 transition-all duration-300 ease-out text-5xl font-bold lg:text-6xl">
+              <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
                 200+
               </div>
-              <div className="text-xl opacity-90">Families Supported</div>
+              <div className="text-base md:text-xl opacity-90">Families Supported</div>
             </div>
             <div
-              className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out text-center"
+              className="text-center"
               style={{ animationDelay: '0.3s' }}
             >
-              <div className="mb-2 opacity-100 transform scale-100 transition-all duration-300 ease-out text-5xl font-bold lg:text-6xl">
+              <div className="mb-2 text-3xl md:text-5xl font-bold lg:text-6xl">
                 50+
               </div>
-              <div className="text-xl opacity-90">Community Events</div>
+              <div className="text-base md:text-xl opacity-90">Community Events</div>
             </div>
           </div>
         </div>
@@ -417,30 +417,30 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-16 lg:py-24 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-16 text-center">
-            <h2 className="mb-6 font-display text-4xl font-bold lg:text-5xl">
+          <div className="mb-12 md:mb-16 text-center">
+            <h2 className="mb-4 md:mb-6 font-display text-3xl md:text-4xl font-bold lg:text-5xl">
               Stories of Hope
             </h2>
-            <p className="mx-auto max-w-3xl text-xl text-gray-600 dark:text-gray-300">
+            <p className="mx-auto max-w-3xl text-lg md:text-xl text-gray-600 dark:text-gray-300 px-4 md:px-0">
               Real stories from children, families, and volunteers who have
               experienced the joy of our community.
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 opacity-100 transform translate-y-0 transition-all duration-300 ease-out p-8">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 md:p-8">
               <div className="mb-4 flex items-center">
-                <div className="mr-4 flex size-12 items-center justify-center rounded-full bg-primary-100">
-                  <span className="text-xl">👧</span>
+                <div className="mr-3 md:mr-4 flex size-10 md:size-12 items-center justify-center rounded-full bg-primary-100">
+                  <span className="text-lg md:text-xl">👧</span>
                 </div>
                 <div>
-                  <div className="font-semibold">Priya, 8 years old</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-300">
+                  <div className="font-semibold text-sm md:text-base">Priya, 8 years old</div>
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-300">
                     Birthday Celebration
                   </div>
                 </div>
               </div>
-              <p className="italic text-gray-600 dark:text-gray-300">
+              <p className="italic text-sm md:text-base text-gray-600 dark:text-gray-300">
                 &quot;It was the first time I had a cake just for me. I felt so
                 happy!&quot;
               </p>
@@ -1012,113 +1012,113 @@ const Home = () => {
       </section>
 
       {/* Contact & Newsletter */}
-      <section className="py-16 lg:py-24 bg-white dark:bg-gray-900">
+      <section className="py-12 md:py-16 lg:py-24 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-16 lg:grid-cols-2">
+          <div className="grid gap-8 md:gap-16 lg:grid-cols-2">
             {/* Contact Form */}
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out">
-              <h3 className="mb-6 font-display text-3xl font-bold">
+            <div>
+              <h3 className="mb-4 md:mb-6 font-display text-2xl md:text-3xl font-bold">
                 Get in Touch
               </h3>
-              <p className="mb-8 text-gray-600 dark:text-gray-300">
-                Have questions or want to get involved? We'd love to hear from
+              <p className="mb-6 md:mb-8 text-sm md:text-base text-gray-600 dark:text-gray-300">
+                Have questions or want to get involved? We&apos;d love to hear from
                 you.
               </p>
 
-              <form className="space-y-6">
+              <form className="space-y-4 md:space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="mb-2 block text-sm font-medium text-gray-700"
+                    className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
                   >
                     Full Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-primary-500"
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-transparent focus:ring-2 focus:ring-primary-500"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="mb-2 block text-sm font-medium text-gray-700"
+                    className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
                   >
                     Email Address
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-primary-500"
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-transparent focus:ring-2 focus:ring-primary-500"
                     placeholder="your@email.com"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="message"
-                    className="mb-2 block text-sm font-medium text-gray-700"
+                    className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300"
                   >
                     Message
                   </label>
                   <textarea
                     id="message"
-                    rows={5}
-                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-primary-500"
+                    rows={4}
+                    className="w-full rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-transparent focus:ring-2 focus:ring-primary-500"
                     placeholder="How can we help you or how would you like to help us?"
                   ></textarea>
                 </div>
-                <button type="submit" className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg transform hover:-translate-y-0.5 w-full">
+                <button type="submit" className="w-full inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 text-sm md:text-base">
                   Send Message
                 </button>
               </form>
             </div>
 
             {/* Newsletter & Info */}
-            <div className="opacity-100 transform translate-y-0 transition-all duration-300 ease-out">
-              <h3 className="mb-6 font-display text-3xl font-bold">
+            <div>
+              <h3 className="mb-4 md:mb-6 font-display text-2xl md:text-3xl font-bold">
                 Stay Connected
               </h3>
-              <p className="mb-8 text-gray-600 dark:text-gray-300">
+              <p className="mb-6 md:mb-8 text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Subscribe to hear stories, updates, and impact reports.
               </p>
 
-              <div className="mb-8 rounded-2xl bg-gray-50 dark:bg-gray-700 p-8">
-                <div className="mb-4 flex items-center gap-4">
-                  <span className="text-2xl">📧</span>
-                  <h4 className="text-xl font-semibold">Newsletter Signup</h4>
+              <div className="mb-6 md:mb-8 rounded-xl md:rounded-2xl bg-gray-50 dark:bg-gray-700 p-4 md:p-8">
+                <div className="mb-3 md:mb-4 flex items-center gap-3 md:gap-4">
+                  <span className="text-xl md:text-2xl">📧</span>
+                  <h4 className="text-lg md:text-xl font-semibold">Newsletter Signup</h4>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   <input
                     type="email"
-                    className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-4 py-3 focus:border-transparent focus:ring-2 focus:ring-primary-500"
+                    className="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white px-3 md:px-4 py-2 md:py-3 text-sm md:text-base focus:border-transparent focus:ring-2 focus:ring-primary-500"
                     placeholder="Enter your email"
                   />
-                  <button className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg transform hover:-translate-y-0.5">Subscribe</button>
+                  <button className="w-full sm:w-auto inline-flex items-center justify-center px-4 md:px-6 py-2 md:py-3 rounded-lg font-medium transition-all duration-200 bg-primary-500 text-white hover:bg-primary-600 hover:shadow-lg hover:-translate-y-0.5 text-sm md:text-base">Subscribe</button>
                 </div>
               </div>
 
               {/* Social Media */}
               <div>
-                <h4 className="mb-4 text-xl font-semibold">Follow Us</h4>
-                <div className="flex gap-4">
+                <h4 className="mb-3 md:mb-4 text-lg md:text-xl font-semibold">Follow Us</h4>
+                <div className="flex gap-3 md:gap-4">
                   <a
                     href={AppConfig.social.facebook}
-                    className="flex size-12 items-center justify-center rounded-full bg-secondary-500 text-white transition-colors hover:bg-secondary-600"
+                    className="flex size-10 md:size-12 items-center justify-center rounded-full bg-secondary-500 text-white transition-colors hover:bg-secondary-600"
                   >
-                    <span className="text-lg">📘</span>
+                    <span className="text-base md:text-lg">📘</span>
                   </a>
                   <a
                     href={AppConfig.social.twitter}
-                    className="flex size-12 items-center justify-center rounded-full bg-secondary-400 text-white transition-colors hover:bg-secondary-500"
+                    className="flex size-10 md:size-12 items-center justify-center rounded-full bg-secondary-400 text-white transition-colors hover:bg-secondary-500"
                   >
-                    <span className="text-lg">🐦</span>
+                    <span className="text-base md:text-lg">🐦</span>
                   </a>
                   <a
                     href={AppConfig.social.instagram}
-                    className="flex size-12 items-center justify-center rounded-full bg-primary-500 text-white transition-colors hover:bg-primary-600"
+                    className="flex size-10 md:size-12 items-center justify-center rounded-full bg-primary-500 text-white transition-colors hover:bg-primary-600"
                   >
-                    <span className="text-lg">📷</span>
+                    <span className="text-base md:text-lg">📷</span>
                   </a>
                 </div>
               </div>
